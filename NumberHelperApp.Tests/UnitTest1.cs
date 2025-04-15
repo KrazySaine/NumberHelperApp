@@ -15,6 +15,18 @@ namespace NumberHelperApp.Tests
 
         }
         [Fact]
+        public void IsEven_ReturnFalse()
+        {
+            // Arrange
+            var numberHelper = new NumberHelper();
+            int number = 5;
+            // Act
+            bool result = numberHelper.IsEven(number);
+            // Assert
+            Assert.False(result);
+        }
+
+        [Fact]
         public void IsPrime_ReturnTrue()
         {
             // Arrange
@@ -26,6 +38,18 @@ namespace NumberHelperApp.Tests
             Assert.True(result);
         }
         [Fact]
+        public void IsPrime_ReturnFalse()
+        {
+            // Arrange
+            var numberHelper = new NumberHelper();
+            int number = 4;
+            // Act
+            bool result = numberHelper.IsPrime(number);
+            // Assert
+            Assert.False(result);
+        }
+
+        [Fact]
         public void IsDouble_ReturnTrue()
         {
             // Arrange
@@ -35,6 +59,17 @@ namespace NumberHelperApp.Tests
             int result = numberHelper.DoubleIt(number);
             // Assert
             Assert.Equal(10, result);
+        }
+        [Fact]
+        public void IsDouble_ReturnFalse()
+        {
+            // Arrange
+            var numberHelper = new NumberHelper();
+            int number = 5;
+            // Act
+            int result = numberHelper.DoubleIt(number);
+            // Assert
+            Assert.NotEqual(11, result);
         }
     }
 }
